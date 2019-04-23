@@ -1,0 +1,187 @@
+header{
+    height: 768px;
+
+    > .wrapper{
+        width: 100%;
+        max-width: inherit;
+        position: fixed;
+
+        &.hide{
+            top: -40px !important;
+        }
+
+        &.show{
+            top: 0px !important;
+        }
+
+        &.active{
+            @include box-shadow(5px, -5px, 8px, #6e6e6e);
+            @include transition;
+            background: #FFF;
+            .menu {
+                @include e('item'){
+                    height: 35px;
+                    color: rgb(138, 138, 138);
+                }
+            }
+
+        }
+    }
+
+}
+
+.mobMenu{
+
+    @include flexbox(row, nowrap, space-between, center, center);
+    @include box-sizing;
+    width: 100%;
+    height: 0px;
+    padding: 0px 15px;
+    background-color: rgba(0, 0, 0, 0.65);
+    position: fixed;
+
+    @include e('bt'){
+        cursor: pointer;
+        &:before{
+            @include set-icon($fa-var-bars, 35px, 900, #FFF);
+            @include transition;
+        }
+        &:hover:before{
+            color: $color-red-light;
+        }
+    }
+
+    .buy{
+        @include fonte($second-font, 300, 16px, #FFF);
+        @include border-radius(5px);
+        background-color: rgb(61, 61, 61);
+        padding: 5px 10px;
+        cursor: pointer;
+        &:hover{
+            background-color: rgb(41, 41, 41);
+        }
+    }
+
+    @media #{$res-up} {
+        @include opacity(0);
+        visibility: hidden;
+    }
+
+    @media #{$res-down} {
+        @include opacity(1);
+        visibility: visible;
+        height: 50px;
+    }
+
+}
+
+.menu{
+    @include box-sizing;
+    @media #{$res-up} {
+        @include flexbox(row, nowrap, space-between, center, center);
+        width: 100%;
+        max-width: 850px;
+        margin: 0px auto;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+
+        @include e('item'){
+            height: 100px;
+        }
+    }
+
+    @media #{$res-down} {
+        @include opacity(0);
+        background-color: rgba(0, 0, 0, 0.65);
+        width: 100%;
+        height: 100%;
+        top: 50px;
+        right: 0;
+        position: fixed;
+        visibility: hidden;
+
+        &.active{
+            @include animate(fadeInRight, 0s);
+            visibility: visible;
+        }
+
+        &.inactive{
+            @include animate(fadeOutRight, 0s);
+            visibility: visible;
+        }
+
+    }
+
+    @include e('item'){
+        @include flexbox(row, nowrap, center, center, center);
+        @include fonte($second-font, 300, 16px, #FFF);
+        position: relative;
+        padding: 0px 10px;
+
+        &:hover{
+            font-weight: 600;
+        }
+
+        &.active{
+            &:before{
+                @include animate(bounceInLeft, 0s);
+                content: "";
+                width: 100%;
+                height: 3px;
+                background-color: $color-red;
+                display: block;
+                position: absolute;
+                bottom: -2px;
+                left: 0;
+            }
+        }
+
+        @media #{$res-down} {
+            @include flexbox(row, nowrap, flex-end, center, center);
+            @include box-sizing;
+            @include transition;
+            padding: 15px;
+
+            &:hover{
+                background-color: #000;
+            }
+            &.active{
+                background-color: #000;
+                &:before{
+                    display: none;
+                }
+            }
+
+        }
+
+    }
+
+}
+
+
+
+
+//TEMP
+
+.sections{
+    width: 100%;
+    height: 500px;
+    display: block;
+
+
+    &#section-1{
+        background-color: #6e6e6e;
+    }
+    &#section-2{
+        background-color: #494949;
+    }
+    &#section-3{
+        background-color: #cacaca;
+    }
+    &#section-4{
+        background-color: #313131;
+    }
+    &#section-5{
+        background-color: #1f1f1f;
+    }
+
+}

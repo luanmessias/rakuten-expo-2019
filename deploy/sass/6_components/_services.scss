@@ -1,0 +1,129 @@
+.services{
+    @include transition;
+    @include box-sizing;
+    @include animate(fadeOut, 0s);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 999999;
+    background-color: rgba(0, 0, 0, 0.527);
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    &.active{
+        @include animate(fadeIn, 0);
+        visibility: visible;
+        cursor: url(../img/burger-close.png), auto;
+        .services__list{
+            @include animate(fadeInRight, .1s);
+        }
+    }
+
+
+    @include e('list'){
+        @include flexbox(column, nowrap, flex-start, center, center);
+        @include animate(fadeOutRight, 0s);
+        @include transition;
+        cursor: default;
+        width: 100%;
+        max-width: 350px;
+        background-color: #FFF;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    @include e('header'){
+        @include flexbox(row, wrap, space-between, center, center);
+        @include box-sizing;
+        box-sizing: border-box;
+        width: 100%;
+        padding: 15px 25px;
+        &:after{
+            content: "";
+            width: 100%;
+            height: 1px;
+            background-color: #ccc;
+            display: block;
+        }
+    }
+
+    @include e('title'){
+        @include fonte($third-font, 400, 18px, #3a3a3a);
+        text-transform: uppercase;
+        padding-left: 20px;
+    }
+
+    @include e('close'){
+        padding: 10px;
+        border-left: 1px solid #ccc;
+        margin: 10px;
+        &:before{
+            @include set-icon($fa-var-times-circle, 22px, 400, #3a3a3a);
+            cursor: pointer;
+        }
+        &:hover:before{
+            color: $color-red;
+        }
+    }
+
+    @include e('link'){
+        @include transition;
+        @include box-sizing;
+        width: 100%;
+        padding: 15px 25px;
+        margin-bottom: 10px;
+        &:hover{
+            background-color: #d6d6d6;
+        }
+    }
+
+    @include e('logo'){
+        height: auto;
+        width: auto;
+        max-height: 30px;
+    }
+
+    @include e('desc'){
+        @include fonte($third-font, 300, 16px, #797979);
+        display: block;
+        width: 100%;
+        margin-top: 5px;
+    }
+
+
+    @include e('footer'){
+        width: 100%;
+    }
+
+    @include e('img'){
+        width: 100%;
+        height: auto;
+        margin-top: auto;
+    }
+
+    @include e('bts'){
+        @include flexbox(row, nowrap, space-between, center, center);
+        @include box-sizing;
+        width: 100%;
+        padding: 15px 25px;
+        margin-bottom: 10px;
+    }
+
+    @include e('bt'){
+        @include fonte($third-font, 400, 18px, #FFF);
+        @include transition;
+        background-color: $color-red;
+        padding: 10px 25px;
+        &:hover{
+            background-color: #000;
+        }
+    }
+    
+
+
+
+}
