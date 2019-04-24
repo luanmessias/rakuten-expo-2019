@@ -1,42 +1,177 @@
 .topSlider{
-    & > div {
+    width: 100%;
+    height: 100%;
+    background-color: #141228;
+    
+    .owl-carousel,
+    .owl-stage-outer,
+    .owl-stage,
+    .owl-item {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    &.owl-theme .owl-nav + .owl-dots{
+        @include flexbox(column, nowrap, center, center, center);
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        padding: 0px 10px;
+        margin: 0;
+    }
+
+    @include e('item') {
         position: absolute;
         top: 0px;
         left: 0px;
         width: 100%;
         height: 100%;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
         z-index: 1;
+        overflow: hidden;
+        padding-top: 150px;
+
+        &:before{
+            content: "";
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            -webkit-animation: bannerIn 50s ease-in infinite;
+            animation: bannerIn 50s ease-in infinite;
+            transition: all .5s ease-in-out;
+            overflow: hidden;
+            z-index: -1;
+        }
+
     }
 
     .wrapper{
         @include box-sizing;
+        max-width: 990px;
         overflow: hidden;
-        max-width: 850px;
         padding: 0px;
         height: 100%;
         margin: 0px auto;
-        padding-top: 150px;
-        
     }
 
     .first{
-        @include bgimage('bgtop1.jpg');
+        &:before{
+            @include bgimage('bgtop1.jpg');
+        }
+        
+        .line-one{
+            width: 100%;
+            .wrapper{
+                @include flexbox(row, wrap, space-between, flex-start, flex-start);
+            }
+
+            .sep{
+                margin: 0px 15px;
+            }
+
+        }
 
         .logo{
             @include animate(fadeInLeft, 0s);
         }
 
+        .sep{
+            @include animate(fadeIn, 1s);
+            position: relative;
+            
+        }
+
+        .slogan{
+            overflow: hidden;
+            @include e('you'){
+                @include animate(fadeInLeft, 1.5s);
+            }
+            @include e('make'){
+                @include animate(fadeInLeft, 1.7s);
+            }
+            @include e('the'){
+                @include animate(fadeInLeft, 1.9s);
+            }
+            @include e('future'){
+                @include animate(fadeInLeft, 2.1s);
+            }
+            @include e('txt'){
+                @include fonte($second-font, 300, 38px, #FFF);
+                @include animate(fadeInUp, 1.9s);
+                width: 100%;
+                text-align: center;
+                text-transform: uppercase;
+                letter-spacing: 7px;
+            }
+        }
+
+        .info{
+            @include flexbox(row, wrap, space-between, center, center);
+            @include animate(fadeInUp, 1.9s);
+            width: 100%;
+
+            @include e('desc'){
+                @include flexbox(row, nowrap, flex-start, center, center);
+                strong{
+                    @include fonte($second-font, 800, 43px, #FFF);
+                }
+                span{
+                    @include fonte($second-font, 300, 27px, #FFF);
+                }
+                img{
+                    margin-right: 10px;
+                }
+
+            }
+
+        }
+
+
     }
 
     .second{
-        @include bgimage('bgtop2.jpg');
+        &:before{
+            @include bgimage('bgtop2.jpg');
+        }
     }
 
     .third{
-        @include bgimage('bgtop3.jpg');
+        &:before{
+            @include bgimage('bgtop3.jpg');
+        }
     }
 
 }
+
+
+
+/* Zoom in Keyframes */
+@-webkit-keyframes bannerIn {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.5);}
+    100% {transform: scale(1);}
+  }
+  @keyframes bannerIn {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.5);}
+    100% {transform: scale(1);}
+  } /*End of Zoom in Keyframes */
+  
+  /* Zoom out Keyframes */
+  @-webkit-keyframes bannerOut {
+    0% {transform: scale(1);}
+    50% {transform: scale(0.67);}
+    100% {transform: scale(1);}
+  }
+  @keyframes bannerOut {
+      0% {transform: scale(1);}
+    50% {transform: scale(0.67);}
+    100% {transform: scale(1);}
+  }/*End of Zoom out Keyframes */
+  

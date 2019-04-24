@@ -2,17 +2,11 @@ header{
     height: 768px;
 
     > .wrapper{
+        @include flexbox(row, nowrap, space-between, space-between, space-between);
         width: 100%;
         max-width: inherit;
         position: fixed;
-
-        &.hide{
-            top: -40px !important;
-        }
-
-        &.show{
-            top: 0px !important;
-        }
+        border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 
         &.active{
             @include box-shadow(5px, -5px, 8px, #6e6e6e);
@@ -20,7 +14,7 @@ header{
             background: #FFF;
             .menu {
                 @include e('item'){
-                    height: 35px;
+                    height: 75px;
                     color: rgb(138, 138, 138);
                 }
             }
@@ -31,7 +25,6 @@ header{
 }
 
 .mobMenu{
-
     @include flexbox(row, nowrap, space-between, center, center);
     @include box-sizing;
     width: 100%;
@@ -80,9 +73,8 @@ header{
     @media #{$res-up} {
         @include flexbox(row, nowrap, space-between, center, center);
         width: 100%;
-        max-width: 850px;
+        max-width: $res-wrapper;
         margin: 0px auto;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 
         @include e('item'){
             height: 100px;
@@ -109,6 +101,13 @@ header{
             visibility: visible;
         }
 
+    }
+
+    .logo_menu,
+    .logo_menu_red{
+        &.hide{
+            display: none;
+        }
     }
 
     @include e('item'){
@@ -151,6 +150,19 @@ header{
                 }
             }
 
+        }
+
+        @include m('alt'){
+            @include border-radius(220px);
+            background-color: $color-red;
+            padding: 10px 20px;
+            height: auto !important;
+            font-weight: 600;
+            color: #FFF !important;
+            &:after{
+                @include set-icon($fa-var-angle-double-right,19px, 900, #FFF);
+                margin-left: 10px;
+            }
         }
 
     }
