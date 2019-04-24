@@ -46,6 +46,11 @@
                         </div>
                     </div>
                 </div>
+                
+                <div class="next">
+                    <i class="fas fa-angle-double-down"></i>
+                </div>
+
             </div>
         </div>
     </div>
