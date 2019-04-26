@@ -6,8 +6,8 @@
     max-width: $res-wrapper;
     z-index: 2;
 
-    @media #{$res-xs}, #{$res-sm} {
-      padding: 0px 15px;  
+    @media #{$break-down}, #{$break-up} {
+      padding: 0px 20px;
     }
 }
 

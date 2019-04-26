@@ -1,5 +1,15 @@
 header{
-    height: 768px;
+    @include transition;
+
+    @media #{$wrap-up}{
+        height: 768px;
+    }
+    @media #{$wrap-down}{
+        height: 940px;
+    }
+    @media #{$break-down}{
+        height: 1380px;
+    }
 
     > .wrapper{
         @include flexbox(row, nowrap, space-between, space-between, space-between);
@@ -20,6 +30,7 @@ header{
             }
 
         }
+
     }
 
 }
@@ -32,6 +43,7 @@ header{
     padding: 0px 15px;
     background-color: rgba(0, 0, 0, 0.65);
     position: fixed;
+    z-index: 10;
 
     @include e('bt'){
         cursor: pointer;
@@ -55,12 +67,12 @@ header{
         }
     }
 
-    @media #{$res-up} {
+    @media #{$break-up} {
         @include opacity(0);
         visibility: hidden;
     }
 
-    @media #{$res-down} {
+    @media #{$break-down} {
         @include opacity(1);
         visibility: visible;
         height: 50px;
@@ -70,7 +82,8 @@ header{
 
 .menu{
     @include box-sizing;
-    @media #{$res-up} {
+
+    @media #{$break-up} {
         @include flexbox(row, nowrap, space-between, center, center);
         width: 100%;
         max-width: $res-wrapper;
@@ -81,7 +94,7 @@ header{
         }
     }
 
-    @media #{$res-down} {
+    @media #{$break-down} {
         @include opacity(0);
         background-color: rgba(0, 0, 0, 0.65);
         width: 100%;
@@ -134,7 +147,7 @@ header{
             }
         }
 
-        @media #{$res-down} {
+        @media #{$break-down} {
             @include flexbox(row, nowrap, flex-end, center, center);
             @include box-sizing;
             @include transition;

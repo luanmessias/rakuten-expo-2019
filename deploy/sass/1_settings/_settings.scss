@@ -2,6 +2,7 @@
 //=======================================================================
 $img-url: "../../assets/img";
 $res-wrapper: 1000px;
+$res-break: 850px;
 
 
 //SETTINGS - FONTS
@@ -75,5 +76,7 @@ $res-md: "(min-width: 768px) and (max-width: 991px)";
 $res-lg: "(min-width: 992px) and (max-width: 1199px)";
 $res-xl: "(min-width: 1200px)";
 
-$res-down: "(max-width: 850px)";
-$res-up: "(min-width: 851px)";
+$break-down: "(max-width: #{$res-break})";
+$break-up: "(min-width: #{$res-break + 1})";
+$wrap-down: "(min-width: #{$res-break + 1}) and (max-width: #{$res-wrapper})";
+$wrap-up: "(min-width: #{$res-wrapper + 1})";

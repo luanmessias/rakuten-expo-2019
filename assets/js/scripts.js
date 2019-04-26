@@ -55,7 +55,7 @@ $.fn.toggle2classes = function (class1, class2) {
    });
 };
 
-$('.menu__item').click(function (e) {
+$('.goTo').click(function (e) {
    e.preventDefault();
    var target = $($(this).attr('href'));
 
@@ -63,7 +63,7 @@ $('.menu__item').click(function (e) {
    $(this).addClass('active');
 
    if (target.length) {
-      var scrollTo = target.offset().top - 35;
+      var scrollTo = target.offset().top - 76;
       $('body, html').animate({ scrollTop: scrollTo + 'px' }, 800);
    }
 });
@@ -74,7 +74,6 @@ $('.mobMenu__bt').click(function () {
 });
 
 $('.one').on('click', function () {
-
    $('p').get(0).scrollIntoView({
       block: "start",
       behavior: "smooth"
@@ -111,16 +110,16 @@ $(window).scroll(function () {
 
 
 
-$(document).ready(function(){
+$(document).ready(function () {
    initializeClock();
 
    //Banner Home Function
    $('.topSlider').owlCarousel({
       animateOut: 'fadeOut',
       animateIn: 'fadeIn',
-      items:1,
-      smartSpeed:450,
+      items: 1,
+      smartSpeed: 450,
       mouseDrag: false,
       dots: true
-  });
+   });
 });

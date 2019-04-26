@@ -32,6 +32,15 @@
         overflow: hidden;
         padding-top: 150px;
 
+        @media #{$break-up}, #{$wrap-up}  {
+            padding-top: 150px;
+        }
+
+        @media #{$break-down} {
+            padding-top: 60px;
+        }
+
+
         &:before{
             content: "";
             position: absolute;
@@ -53,9 +62,7 @@
 
     .wrapper{
         @include box-sizing;
-        max-width: 990px;
         overflow: hidden;
-        padding: 0px;
         height: 100%;
         margin: 0px auto;
     }
@@ -66,26 +73,40 @@
         &:before{
             @include bgimage('bgtop1.jpg');
         }
-        
-        .line-one{
+
+        .wrapper{
+            @include flexbox(column, wrap, space-between, flex-start, flex-start);
             width: 100%;
-            .wrapper{
+            height: calc(100% - 150px);
+        }
+
+        
+        .line{
+            
+            @media #{$wrap-up}{
                 @include flexbox(row, wrap, space-between, flex-start, flex-start);
             }
+
 
             .sep{
                 margin: 0px 15px;
             }
-
         }
 
         .logo{
             @include animate(fadeInLeft, 0s);
+            @media #{$break-down}, #{$wrap-down}  {
+                display: none;
+            }
         }
 
         .sep{
             @include animate(fadeIn, 1s);
             position: relative;
+            
+            @media #{$break-down}, #{$wrap-down}  {
+                display: none;
+            }
             
         }
 
@@ -104,12 +125,37 @@
                 @include animate(fadeInLeft, 2.1s);
             }
             @include e('txt'){
-                @include fonte($second-font, 300, 38px, #FFF);
+                @include fonte($second-font, 300, 36px, #FFF);
                 @include animate(fadeInUp, 1.9s);
                 width: 100%;
                 text-align: center;
                 text-transform: uppercase;
                 letter-spacing: 7px;
+            }
+
+            @media #{$break-down}, #{$wrap-down}  {
+                width: 100%;
+                max-width: 90%;
+                img{
+                    width: 100%;
+                }
+                
+                .slogan__you{
+                    max-width: 50%;
+                }
+
+                .slogan__make{
+                    max-width: 85%;
+                }
+
+                .slogan__the{
+                    max-width: 50%;
+                }
+
+                .slogan__future{
+                    max-width: 100%;
+                }
+
             }
         }
 
@@ -138,9 +184,14 @@
             width: 100%;
             text-align: center;
             padding: 10px 0px;
+            margin-bottom: 30px;
             i{
                 font-size: 35px;
                 color: #FFF;
+                animation: arrowBounce 2s infinite;
+                -webkit-animation: arrowBounce 2s infinite;
+                -moz-animation: arrowBounce 2s infinite;
+                -o-animation: arrowBounce 2s infinite;
             }
         }
 
@@ -163,27 +214,3 @@
 
 
 
-/* Zoom in Keyframes */
-@-webkit-keyframes bannerIn {
-    0% {transform: scale(1);}
-    50% {transform: scale(1.5);}
-    100% {transform: scale(1);}
-  }
-  @keyframes bannerIn {
-    0% {transform: scale(1);}
-    50% {transform: scale(1.5);}
-    100% {transform: scale(1);}
-  } /*End of Zoom in Keyframes */
-  
-  /* Zoom out Keyframes */
-  @-webkit-keyframes bannerOut {
-    0% {transform: scale(1);}
-    50% {transform: scale(0.67);}
-    100% {transform: scale(1);}
-  }
-  @keyframes bannerOut {
-      0% {transform: scale(1);}
-    50% {transform: scale(0.67);}
-    100% {transform: scale(1);}
-  }/*End of Zoom out Keyframes */
-  
