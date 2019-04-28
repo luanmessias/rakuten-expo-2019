@@ -1,7 +1,7 @@
 <header id="section-0">
 
     <div class="mobMenu">
-        <div class="buy">INGRESSO</div>
+        <img class="logo_menu" src="assets/img/logo_menu.png" alt="" />
         <div class="mobMenu__bt"></div>
     </div>
 

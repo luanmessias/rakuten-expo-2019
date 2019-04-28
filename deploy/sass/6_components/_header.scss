@@ -1,6 +1,6 @@
 header{
     @include transition;
-
+    
     @media #{$wrap-up}{
         height: 768px;
     }
@@ -8,7 +8,7 @@ header{
         height: 940px;
     }
     @media #{$break-down}{
-        height: 1380px;
+        height: 850px;
     }
 
     > .wrapper{

@@ -27,13 +27,22 @@ function initializeClock() {
       document.getElementById("days").innerHTML = days;
       document.getElementById("hours").innerHTML = hours;
       document.getElementById("minutes").innerHTML = minutes;
+
+      document.getElementById("days_fogaca").innerHTML = days;
+      document.getElementById("hours_fogaca").innerHTML = hours;
+      document.getElementById("minutes_fogaca").innerHTML = minutes;
+
+      document.getElementById("days_luan").innerHTML = days;
+      document.getElementById("hours_luan").innerHTML = hours;
+      document.getElementById("minutes_luan").innerHTML = minutes;
+
       // document.getElementById("seconds").innerHTML = seconds;
 
 
       // If the count down is finished, write some text 
       if (distance < 0) {
          clearInterval(x);
-         document.getElementById("clock").innerHTML = "EXPIRED";
+         document.getElementById("clock").innerHTML = "0";
       }
    }, 1000);
 }
@@ -120,6 +129,7 @@ $(document).ready(function () {
       items: 1,
       smartSpeed: 450,
       mouseDrag: false,
+      touchDrag: false,
       dots: true
    });
 });
