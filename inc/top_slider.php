@@ -24,14 +24,14 @@
 
                 <div class="info">
                     <?php include 'inc/timer.php' ?>
-                    <div class="info__desc">
+                    <div class="info__desc info__desc--date">
                         <img src="assets/img/icon-calendar.png" alt="" />
                        <div>
                            <strong>10 OUT</strong> <br>
                             <span>2019</span>
                         </div>
                     </div>
-                    <div class="info__desc">
+                    <div class="info__desc info__desc--local">
                         <img src="assets/img/icon-location.png" alt="" />
                         <div>
                             <strong>SÃO PAULO</strong> <br>
@@ -55,8 +55,8 @@
             <div class="keynote__about"><img src="assets/img/aspas.png" alt="">PALESTRANTE CONFIRMADO</div>    
             <div class="keynote__name">CHEF <br> HENRIQUE <br> FOGAÇA</div>
             <div class="keynote__timer">
-            <div id="timer" class="timer">
-                <div class="timer__block timer__block--day">
+                <div id="timer" class="timer">
+                    <div class="timer__block timer__block--day">
                         <span id="days_fogaca" class="timer__day"></span>
                         <span>DIAS</span>
                     </div>
@@ -76,6 +76,30 @@
     </div>
 
     <div class="topSlider__item show">
+        <div class="wrapper">
+            <div class="show__about"><img src="assets/img/aspas.png" alt="">SHOW DE ENCERRAMENTO</div>
+            <div class="show__name">
+                <img src="assets/img/luan_logo.png" alt="Logo Luan">
+            </div>
+            <div class="show__timer">
+                <div id="timer" class="timer">
+                    <div class="timer__block timer__block--day">
+                        <span id="days_luan" class="timer__day"></span>
+                        <span>DIAS</span>
+                    </div>
+                    <div class="timer__block timer__block--hour">
+                        <span id="hours_luan" class="timer__hour"></span>
+                        <span>HORAS</span>
+                    </div>
+                    <div class="timer__block timer__block--min">
+                        <span id="minutes_luan" class="timer__min"></span>
+                        <span>MINUTOS</span>
+                    </div>
+                </div>
+            </div>
+            <img class="show__photo" src="assets/img/luan.png" alt="Chef Henrique Fogaça">
+            <img class="show__slogan" src="assets/img/show.png" alt="keynote Slogan">
+        </div>
     </div>
 
 </div>

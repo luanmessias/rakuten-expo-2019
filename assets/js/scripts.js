@@ -130,6 +130,7 @@ $(document).ready(function () {
       smartSpeed: 450,
       mouseDrag: false,
       touchDrag: false,
-      dots: true
+      dots: true,
+      autoHeight:true
    });
 });

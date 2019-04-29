@@ -1,15 +1,6 @@
 header{
     @include transition;
-    
-    @media #{$wrap-up}{
-        height: 768px;
-    }
-    @media #{$wrap-down}{
-        height: 940px;
-    }
-    @media #{$break-down}{
-        height: 850px;
-    }
+   
 
     > .wrapper{
         @include flexbox(row, nowrap, space-between, space-between, space-between);

@@ -381,3 +381,21 @@ $y) {
   justify-content: center;
   flex-direction: column;
 }
+
+@mixin res-between($min, $max) {
+  @media screen and (min-width: #{$min}) and (max-width: #{$max}) { 
+    @content;
+  }
+}
+
+@mixin res-min($min) {
+  @media (min-width: #{$min}){ 
+    @content;
+  }
+}
+
+@mixin res-max($max) {
+  @media (max-width: #{$max}){ 
+    @content;
+  }
+}

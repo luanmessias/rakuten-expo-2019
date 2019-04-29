@@ -1,0 +1,193 @@
+.topSlider {
+    .keynote {
+
+        @include m('fogaca') {
+            &:before {
+                @include bgimage('bgtop_fogaca.jpg');
+            }
+        }
+
+        .wrapper {
+            @include flexbox(column, wrap, flex-start, flex-start, flex-start);
+        }
+
+
+        @include e('about') {
+            @include fonte($second-font, 300, 36px, #FFF);
+            @include transition;
+            margin-bottom: 10px;
+            display: block;
+            width: 100%;
+
+            img {
+                display: block;
+            }
+
+            @include res-max(350px) {
+                font-size: 22px;
+                max-width: 190px;
+
+                img {
+                    width: 27px;
+                    height: auto;
+                }
+            }
+
+            @include res-between(351px, 450px) {
+                font-size: 25px;
+                max-width: 200px;
+
+                img {
+                    width: 27px;
+                    height: auto;
+                }
+            }
+
+            @include res-between(401px, 500px) {
+                font-size: 35px;
+                max-width: 400px;
+
+                img {
+                    width: 27px;
+                    height: auto;
+                }
+            }
+
+            @include res-between(501px, 550px) {
+                font-size: 28px;
+
+                img {
+                    width: 32px;
+                    height: auto;
+                }
+            }
+
+            @include res-between(551px, 650px) {
+                font-size: 30px;
+            }
+
+            @include res-between(651px, 750px) {
+                font-size: 35px;
+            }
+
+
+
+        }
+
+        @include e('name') {
+            @include fonte($second-font, 900, 85px, #FFF);
+            @include transition;
+            line-height: 70px;
+            margin-bottom: 45px;
+            margin-top: 30px;
+
+            @include res-max(350px) {
+                font-size: 30px;
+                line-height: 25px;
+                margin-top: 0px;
+                margin-bottom: 200px;
+            }
+
+            @include res-between(351px, 450px) {
+                font-size: 40px;
+                line-height: 35px;
+                margin-top: 0px;
+                margin-bottom: 165px;
+            }
+
+            @include res-between(451px, 500px) {
+                font-size: 45px;
+                line-height: 40px;
+                margin-top: 0px;
+                margin-bottom: 130px;
+            }
+
+            @include res-between(501px, 550px) {
+                font-size: 58px;
+                line-height: 53px;
+                margin-top: 0px;
+                margin-bottom: 140px;
+            }
+
+            @include res-between(551px, 650px) {
+                font-size: 60px;
+                line-height: 53px;
+                margin-top: 0px;
+                margin-bottom: 140px;
+            }
+
+            @include res-between(651px, 750px) {
+                font-size: 60px;
+                line-height: 53px;
+                margin-top: 0px;
+                margin-bottom: 140px;
+            }
+
+        }
+
+        @include e('photo') {
+            @include transition;
+            position: absolute;
+            bottom: -370px;
+            right: 0;
+
+            @include res-between(100px, 400px) {
+                top: 0;
+                right: -50px;
+                width: 357px;
+            }
+
+            @include res-between(401px, 500px) {
+                top: 0;
+                right: -50px;
+                width: 357px;
+            }
+
+            @include res-between(501px, 550px) {
+                top: 0;
+                right: -50px;
+                width: 357px;
+            }
+
+            @include res-between(551px, 650px) {
+                top: 0;
+                right: -50px;
+                width: 400px;
+            }
+
+            @include res-between(651px, 750px) {
+                top: 0;
+                right: -50px;
+                width: 400px;
+            }
+
+            @include res-between(751px, 850px) {
+                top: 0;
+                right: -50px;
+                width: 500px;
+            }
+
+        }
+
+        @include e('timer') {
+            @include res-max(850px) {
+                @include flexbox(row, nowrap, flex-start, center, center);
+                z-index: 1;
+                margin-bottom: 10px;
+            }
+        }
+
+        @include e('slogan') {
+            @include res-between(0px, 1000px) {
+                display: none;
+            }
+
+            position: absolute;
+            bottom: -70px;
+            left: 0;
+        }
+
+
+    }
+
+}
