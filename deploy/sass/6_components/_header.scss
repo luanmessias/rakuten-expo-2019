@@ -1,7 +1,6 @@
 header{
     @include transition;
    
-
     > .wrapper{
         @include flexbox(row, nowrap, space-between, space-between, space-between);
         width: 100%;
@@ -10,17 +9,20 @@ header{
         border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 
         &.active{
-            @include box-shadow(5px, -5px, 8px, #6e6e6e);
-            @include transition;
-            background: #FFF;
-            .menu {
-                @include e('item'){
-                    height: 75px;
-                    color: rgb(138, 138, 138);
+            @include res-min(850px){
+                @include box-shadow(5px, -5px, 8px, #6e6e6e);
+                @include transition;
+                background: #FFF;
+                .menu {
+                    @include e('item'){
+                        height: 100px;
+                        color: rgb(138, 138, 138);
+                    }
                 }
             }
 
         }
+
 
     }
 
@@ -30,21 +32,14 @@ header{
     @include flexbox(row, nowrap, space-between, center, center);
     @include box-sizing;
     width: 100%;
-    height: 0px;
+    height: 60px;
     padding: 0px 15px;
-    background-color: rgba(0, 0, 0, 0.65);
+    background-color:hsla(235, 73%, 6%, 0.9);
     position: fixed;
     z-index: 10;
 
-    @include e('bt'){
-        cursor: pointer;
-        &:before{
-            @include set-icon($fa-var-bars, 35px, 900, #FFF);
-            @include transition;
-        }
-        &:hover:before{
-            color: $color-red-light;
-        }
+    .logo_menu{
+        @include transition;
     }
 
     .buy{
@@ -58,6 +53,44 @@ header{
         }
     }
 
+    .mobBt{
+        @include flexbox(column, nowrap, space-between, flex-start, flex-start);
+        width: 20px;
+        height: 16px;
+        overflow: hidden;
+
+        > span{
+            @include transition(all, 0.6s);
+            height: 1px;
+            background-color: #FFF;
+            display: block;
+            position: relative;
+        }
+
+        @include e('top'){
+            width: 100%;
+        }
+        @include e('mid'){
+            width: 80%;
+        }
+        @include e('bot'){
+            width: 100%;
+        }
+    
+        &.active{
+            .mobBt__top{
+                @include transform(translate(0, 9px) rotate(492deg));
+            }
+            .mobBt__mid{
+                @include opacity(0);
+            }
+            .mobBt__bot{
+                @include transform(translate(0, -6px) rotate(-492deg));
+            }
+        }
+
+    }
+
     @media #{$break-up} {
         @include opacity(0);
         visibility: hidden;
@@ -66,7 +99,12 @@ header{
     @media #{$break-down} {
         @include opacity(1);
         visibility: visible;
-        height: 50px;
+    }
+
+    &.active{
+        .logo_menu{
+            @include opacity(0);
+        }
     }
 
 }
@@ -87,32 +125,45 @@ header{
 
     @media #{$break-down} {
         @include opacity(0);
-        background-color: rgba(0, 0, 0, 0.65);
+        background-color:hsla(235, 73%, 6%, 0.9);
         width: 100%;
-        height: 100%;
-        top: 50px;
+        height: calc(100% - 60px);
+        overflow-x: auto;
+        top: 60px;
         right: 0;
         position: fixed;
         visibility: hidden;
+        padding-bottom: 20px;
 
         &.active{
-            @include animate(fadeInRight, 0s);
+            @include animate(fadeInDown, 0s);
             visibility: visible;
         }
 
         &.inactive{
-            @include animate(fadeOutRight, 0s);
+            @include animate(fadeOutUp, 0s);
             visibility: visible;
         }
 
     }
 
-    .logo_menu,
-    .logo_menu_red{
-        &.hide{
-            display: none;
-        }
-    }
+   @include res-min(851px) {
+       .logo_menu,
+       .logo_menu_red {
+           &.hide {
+               display: none;
+           }
+       }
+   }
+
+   @include res-max(850px) {
+       .logo_menu {
+           display: block !important;
+       }
+       .logo_menu_red{
+            display: none !important;
+       }
+   }
 
     @include e('item'){
         @include flexbox(row, nowrap, center, center, center);
@@ -139,14 +190,16 @@ header{
         }
 
         @media #{$break-down} {
-            @include flexbox(row, nowrap, flex-end, center, center);
+            @include flexbox(column, nowrap, center, center, center);
             @include box-sizing;
             @include transition;
             padding: 15px;
+            font-size: 20px;
 
             &:hover{
                 background-color: #000;
             }
+            
             &.active{
                 background-color: #000;
                 &:before{
@@ -154,18 +207,35 @@ header{
                 }
             }
 
+            &:not(.menu__item--alt):after{
+                content: "";
+                @include opacity(.5);
+                margin-top: 10px;
+                width: 80%;
+                height: 1px;
+                background-color: #FFF;
+            }
+
         }
 
         @include m('alt'){
+            @include flexbox(row, nowrap, center, center, center);
             @include border-radius(220px);
             background-color: $color-red;
             padding: 10px 20px;
             height: auto !important;
             font-weight: 600;
             color: #FFF !important;
+            max-width: 210px;
+            @include res-max(850px){
+                margin: 0px auto;
+            }
             &:after{
                 @include set-icon($fa-var-angle-double-right,19px, 900, #FFF);
                 margin-left: 10px;
+            }
+            &:before{
+                display: none !important;
             }
         }
 

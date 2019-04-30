@@ -12,7 +12,8 @@
     }
 
     .owl-item.active {
-
+        @include animate(fadeIn, 0s);
+        z-index: 1;
         .keynote,
         .show {
             @include e('about') {

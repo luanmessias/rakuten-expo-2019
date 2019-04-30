@@ -11,7 +11,6 @@
             @include flexbox(column, wrap, flex-start, flex-start, flex-start);
         }
 
-
         @include e('about') {
             @include fonte($second-font, 300, 36px, #FFF);
             @include transition;
@@ -21,56 +20,8 @@
 
             img {
                 display: block;
+                height: auto;
             }
-
-            @include res-max(350px) {
-                font-size: 22px;
-                max-width: 190px;
-
-                img {
-                    width: 27px;
-                    height: auto;
-                }
-            }
-
-            @include res-between(351px, 450px) {
-                font-size: 25px;
-                max-width: 200px;
-
-                img {
-                    width: 27px;
-                    height: auto;
-                }
-            }
-
-            @include res-between(401px, 500px) {
-                font-size: 35px;
-                max-width: 400px;
-
-                img {
-                    width: 27px;
-                    height: auto;
-                }
-            }
-
-            @include res-between(501px, 550px) {
-                font-size: 28px;
-
-                img {
-                    width: 32px;
-                    height: auto;
-                }
-            }
-
-            @include res-between(551px, 650px) {
-                font-size: 30px;
-            }
-
-            @include res-between(651px, 750px) {
-                font-size: 35px;
-            }
-
-
 
         }
 
@@ -80,49 +31,6 @@
             line-height: 70px;
             margin-bottom: 45px;
             margin-top: 30px;
-
-            @include res-max(350px) {
-                font-size: 30px;
-                line-height: 25px;
-                margin-top: 0px;
-                margin-bottom: 200px;
-            }
-
-            @include res-between(351px, 450px) {
-                font-size: 40px;
-                line-height: 35px;
-                margin-top: 0px;
-                margin-bottom: 165px;
-            }
-
-            @include res-between(451px, 500px) {
-                font-size: 45px;
-                line-height: 40px;
-                margin-top: 0px;
-                margin-bottom: 130px;
-            }
-
-            @include res-between(501px, 550px) {
-                font-size: 58px;
-                line-height: 53px;
-                margin-top: 0px;
-                margin-bottom: 140px;
-            }
-
-            @include res-between(551px, 650px) {
-                font-size: 60px;
-                line-height: 53px;
-                margin-top: 0px;
-                margin-bottom: 140px;
-            }
-
-            @include res-between(651px, 750px) {
-                font-size: 60px;
-                line-height: 53px;
-                margin-top: 0px;
-                margin-bottom: 140px;
-            }
-
         }
 
         @include e('photo') {
@@ -130,51 +38,6 @@
             position: absolute;
             bottom: -370px;
             right: 0;
-
-            @include res-between(100px, 400px) {
-                top: 0;
-                right: -50px;
-                width: 357px;
-            }
-
-            @include res-between(401px, 500px) {
-                top: 0;
-                right: -50px;
-                width: 357px;
-            }
-
-            @include res-between(501px, 550px) {
-                top: 0;
-                right: -50px;
-                width: 357px;
-            }
-
-            @include res-between(551px, 650px) {
-                top: 0;
-                right: -50px;
-                width: 400px;
-            }
-
-            @include res-between(651px, 750px) {
-                top: 0;
-                right: -50px;
-                width: 400px;
-            }
-
-            @include res-between(751px, 850px) {
-                top: 0;
-                right: -50px;
-                width: 500px;
-            }
-
-        }
-
-        @include e('timer') {
-            @include res-max(850px) {
-                @include flexbox(row, nowrap, flex-start, center, center);
-                z-index: 1;
-                margin-bottom: 10px;
-            }
         }
 
         @include e('slogan') {
@@ -187,6 +50,234 @@
             left: 0;
         }
 
+
+        @include res-max(1000px){
+            @include e('timer') {
+                margin: 10px 0px;
+
+                .timer__block {
+                    width: 70px;
+                    height: 70px;
+                }
+            }
+        }
+
+        @include res-max(350px) {
+            @include e('about') {
+                font-size: 24px;
+                max-width: 200px;
+                img{
+                    max-width: 20px;
+                }
+            }
+            @include e('name') {
+                font-size: 35px;
+                line-height: 31px;
+                margin-top: 0px;
+            }
+            @include e('photo') {
+                max-width: 310px;
+                top: 0px;
+                right: -50px;
+            }
+            @include e('timer'){
+                @include transition;
+                position: absolute;
+                bottom: 0px;
+                z-index: 1;
+                .timer{
+                    @include flexbox(column, wrap, flex-start, flex-start, flex-start);
+                }
+                .timer__block {
+                    width: 80px;
+                    height: 80px;
+                    @include m('hour'){
+                        margin: 10px 0px;
+                    }
+                }
+            }
+        }
+
+        @include res-between(351px, 450px) {
+            @include e('about') {
+                font-size: 24px;
+                max-width: 200px;
+                img{
+                    max-width: 20px;
+                }
+            }
+            @include e('name') {
+                font-size: 35px;
+                line-height: 31px;
+                margin-top: 0px;
+            }
+            @include e('photo') {
+                max-width: 370px;
+                top: 0px;
+                right: -50px;
+            }
+            @include e('timer'){
+                @include transition;
+                position: absolute;
+                bottom: 0px;
+                z-index: 1;
+                .timer{
+                    @include flexbox(column, wrap, flex-start, flex-start, flex-start);
+                }
+                .timer__block {
+                    width: 80px;
+                    height: 80px;
+                    @include m('hour'){
+                        margin: 10px 0px;
+                    }
+                }
+            }
+        }
+
+        @include res-between(451px, 550px) {
+            @include e('about') {
+                font-size: 30px;
+                max-width: 250px;
+                img{
+                    max-width: 30px;
+                }
+            }
+            @include e('name') {
+                font-size: 52px;
+                line-height: 50px;
+                margin-top: 0px;
+            }
+            @include e('photo') {
+                max-width: 370px;
+                top: 0px;
+                right: -50px;
+            }
+            @include e('timer'){
+                position: absolute;
+                bottom: 10px;
+                z-index: 1;
+                .timer__block {
+                    width: 85px;
+                    height: 85px;
+                }
+            }
+        }
+
+        @include res-between(551px, 650px) {
+            @include e('about') {
+                font-size: 35px;
+                max-width: 250px;
+                img{
+                    max-width: 40px;
+                }
+            }
+            @include e('name') {
+                font-size: 65px;
+                line-height: 60px;
+                margin-top: 0px;
+            }
+            @include e('photo') {
+                max-width: 440px;
+                top: 0px;
+                right: -50px;
+            }
+            @include e('timer'){
+                position: absolute;
+                bottom: 10px;
+                z-index: 1;
+                .timer__block {
+                    width: 85px;
+                    height: 85px;
+                }
+            }
+        }
+
+        @include res-between(651px, 750px) {
+            @include e('about') {
+                font-size: 35px;
+                max-width: 250px;
+                img{
+                    max-width: 40px;
+                }
+            }
+            @include e('name') {
+                font-size: 65px;
+                line-height: 60px;
+                margin-top: 0px;
+            }
+            @include e('photo') {
+                max-width: 440px;
+                top: 0px;
+                right: -50px;
+            }
+            @include e('timer'){
+                position: absolute;
+                bottom: 10px;
+                z-index: 1;
+                .timer__block {
+                    width: 85px;
+                    height: 85px;
+                }
+            }
+        }
+
+        @include res-between(751px, 850px) {
+            @include e('about') {
+                font-size: 35px;
+                img{
+                    max-width: 40px;
+                }
+            }
+            @include e('name') {
+                font-size: 65px;
+                line-height: 60px;
+                margin-top: 0px;
+            }
+            @include e('photo') {
+                max-width: 550px;
+                top: 0px;
+                right: -50px;
+            }
+            @include e('timer'){
+                position: absolute;
+                bottom: 10px;
+                z-index: 1;
+                .timer__block {
+                    width: 85px;
+                    height: 85px;
+                }
+            }
+        }
+
+        @include res-between(851px, 1000px) {
+          
+            @include e('about') {
+                font-size: 35px;
+                img{
+                    max-width: 40px;
+                }
+            }
+            @include e('name') {
+                font-size: 65px;
+                line-height: 60px;
+                margin-top: 0px;
+            }
+            @include e('photo') {
+                max-width: 450px;
+                top: 0px;
+                right: 40px;
+            }
+            @include e('timer'){
+                position: absolute;
+                bottom: 10px;
+                z-index: 1;
+                .timer__block {
+                    width: 85px;
+                    height: 85px;
+                }
+            }
+
+        }
 
     }
 

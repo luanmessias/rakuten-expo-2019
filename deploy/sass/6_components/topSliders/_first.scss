@@ -301,7 +301,11 @@
 
         }
 
-
+        @include res-min(1001px){
+            .line{
+                padding-top: 70px;
+            }
+        }
 
     }
 }

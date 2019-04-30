@@ -5,11 +5,9 @@
             @include bgimage('bgtop_luan.jpg');
         }
 
-
         .wrapper {
             @include flexbox(column, wrap, flex-start, flex-start, flex-start);
         }
-
 
         @include e('about') {
             @include fonte($second-font, 300, 36px, #FFF);
@@ -21,68 +19,6 @@
             img {
                 display: block;
             }
-
-            @include res-max(350px) {
-                font-size: 18px;
-                max-width: 100px;
-
-                img {
-                    width: 20px;
-                    height: auto;
-                }
-            }
-
-            @include res-between(351px, 400px) {
-                font-size: 18px;
-                max-width: 100px;
-
-                img {
-                    width: 20px;
-                    height: auto;
-                }
-            }
-
-            @include res-between(401px, 500px) {
-                font-size: 28px;
-                max-width: 200px;
-
-                img {
-                    width: 25px;
-                    height: auto;
-                }
-            }
-
-            @include res-between(501px, 550px) {
-                font-size: 32px;
-                max-width: 260px;
-
-                img {
-                    width: 25px;
-                    height: auto;
-                }
-            }
-
-            @include res-between(551px, 650px) {
-                font-size: 32px;
-                max-width: 260px;
-
-                img {
-                    width: 25px;
-                    height: auto;
-                }
-            }
-
-            @include res-between(651px, 750px) {
-                font-size: 32px;
-                max-width: 260px;
-
-                img {
-                    width: 25px;
-                    height: auto;
-                }
-            }
-
-
 
         }
 
@@ -96,82 +32,14 @@
                 margin: 40px 0px;
             }
 
-            img {
-                @include res-between(100px, 400px) {
-                    max-width: 147px;
-                    margin-top: 57px;
-                    margin-bottom: 95px;
-                }
-
-                @include res-between(401px, 500px) {
-                    max-width: 210px;
-                    margin-top: 34px;
-                    margin-bottom: 68px;
-                }
-
-                @include res-between(501px, 550px) {
-                    max-width: 250px;
-                    margin-top: 15px;
-                    margin-bottom: 68px;
-                }
-
-                @include res-between(551px, 650px) {
-                    max-width: 490px;
-                }
-
-                @include res-between(651px, 750px) {
-                    max-width: 490px;
-                }
-
-                @include res-between(751px, 850px) {
-                    max-width: 490px;
-                }
-            }
-
         }
 
         @include e('photo') {
             @include transition;
             position: absolute;
-            bottom: -48px;
-            right: 0;
-
-            @include res-between(100px, 400px) {
-                top: 0px;
-                right: -123px;
-                width: 357px;
-            }
-
-            @include res-between(401px, 500px) {
-                top: 0px;
-                right: -103px;
-                width: 357px;
-            }
-
-            @include res-between(501px, 550px) {
-                bottom: 0;
-                right: -50px;
-                width: 360px;
-            }
-
-            @include res-between(551px, 650px) {
-                top: 0;
-                right: -50px;
-                width: 400px;
-            }
-
-            @include res-between(651px, 750px) {
-                top: 0;
-                right: -50px;
-                width: 400px;
-            }
-
-            @include res-between(751px, 850px) {
-                top: 0;
-                right: -50px;
-                width: 500px;
-            }
-
+            max-width: 600px;
+            top: 0px;
+            right: 0px;
         }
 
         @include e('timer') {
@@ -180,16 +48,262 @@
                 z-index: 1;
                 margin-bottom: 10px;
             }
+
+            .timer{
+                @include transition;
+            }
+
         }
 
         @include e('slogan') {
             @include res-between(0px, 1000px) {
                 display: none;
             }
-
             position: absolute;
             bottom: -175px;
             left: 0;
+        }
+
+
+        @include res-max(1000px){
+            @include e('timer') {
+                margin: 10px 0px;
+
+                .timer__block {
+                    width: 70px;
+                    height: 70px;
+                }
+            }
+        }
+
+        @include res-max(350px) {
+
+            @include e('about') {
+                font-size: 20px;
+                max-width: 200px;
+                img{
+                    max-width: 20px;
+                }
+            }
+
+            @include e('name') {
+               img{
+                    max-width: 160px;
+                    margin-top: 10px;
+               }
+            }
+
+            @include e('photo') {
+                max-width: 310px;
+                top: 0px;
+                right: -100px;
+            }
+
+            @include e('timer'){
+                @include transition;
+                position: absolute;
+                bottom: 10px;
+                z-index: 1;
+                .timer{
+                    @include flexbox(column, wrap, flex-start, flex-start, flex-start);
+                }
+                .timer__block {
+                    width: 80px;
+                    height: 80px;
+                    @include m('hour'){
+                        margin: 10px 0px;
+                    }
+                }
+            }
+
+        }
+
+        @include res-between(351px, 450px) {
+            @include e('about') {
+                font-size: 20px;
+                max-width: 200px;
+                img{
+                    max-width: 20px;
+                }
+            }
+            @include e('name') {
+               img{
+                    max-width: 160px;
+                    margin-top: 10px;
+               }
+            }
+            @include e('photo') {
+                max-width: 370px;
+                top: 0px;
+                right: -100px;
+            }
+            @include e('timer'){
+                position: absolute;
+                bottom: 10px;
+                z-index: 1;
+                .timer{
+                    @include flexbox(column, wrap, flex-start, flex-start, flex-start);
+                }
+                .timer__block {
+                    width: 80px;
+                    height: 80px;
+                    @include m('hour'){
+                        margin: 10px 0px;
+                    }
+                }
+            }
+        }
+
+        @include res-between(451px, 550px) {
+            @include e('about') {
+                font-size: 30px;
+                max-width: 200px;
+                img{
+                    max-width: 35px;
+                }
+            }
+            @include e('name') {
+               img{
+                    max-width: 220px;
+                    margin-top: 10px;
+               }
+            }
+            @include e('photo') {
+                max-width: 415px;
+                top: 0px;
+                right: -100px;
+            }
+            @include e('timer'){
+                position: absolute;
+                bottom: 10px;
+                z-index: 1;
+                .timer__block {
+                    width: 85px;
+                    height: 85px;
+                }
+            }
+        }
+
+        @include res-between(551px, 650px) {
+            @include e('about') {
+                font-size: 37px;
+                max-width: 300px;
+                img{
+                    max-width: 40px;
+                }
+            }
+            @include e('name') {
+               img{
+                max-width: 280px;
+                margin-top: 10px;
+               }
+            }
+            @include e('photo') {
+                max-width: 475px;
+                top: 0px;
+                right: -110px;
+            }
+            @include e('timer'){
+                position: absolute;
+                bottom: 10px;
+                z-index: 1;
+                .timer__block {
+                    width: 85px;
+                    height: 85px;
+                }
+            }
+        }
+
+        @include res-between(651px, 750px) {
+            @include e('about') {
+                font-size: 37px;
+                max-width: 300px;
+                img{
+                    max-width: 40px;
+                }
+            }
+            @include e('name') {
+               img{
+                max-width: 340px;
+                margin-top: 10px;
+               }
+            }
+            @include e('photo') {
+                max-width: 540px;
+                top: 0px;
+                right: -110px;
+            }
+            @include e('timer'){
+                position: absolute;
+                bottom: 10px;
+                z-index: 1;
+                .timer__block {
+                    width: 85px;
+                    height: 85px;
+                }
+            }
+        }
+
+        @include res-between(751px, 850px) {
+            @include e('about') {
+                font-size: 45px;
+                max-width: 300px;
+                img{
+                    max-width: inherit;
+                }
+            }
+            @include e('name') {
+               img{
+                max-width: 380px;
+                margin-top: 10px;
+               }
+            }
+            @include e('photo') {
+                max-width: 600px;
+                top: 0px;
+                right: -110px;
+            }
+            @include e('timer'){
+                position: absolute;
+                bottom: 10px;
+                z-index: 1;
+                .timer__block {
+                    width: 85px;
+                    height: 85px;
+                }
+            }
+        }
+
+        @include res-between(851px, 1000px) {
+          
+            @include e('about') {
+                font-size: 35px;
+                max-width: inherit;
+                img{
+                    max-width: inherit;
+                }
+            }
+            @include e('name') {
+               img{
+                max-width: 380px;
+                margin-top: 10px;
+               }
+            }
+            @include e('photo') {
+                max-width: 480px;
+                top: 0px;
+                right: 0px;
+            }
+            @include e('timer'){
+                position: absolute;
+                bottom: 10px;
+                z-index: 1;
+                .timer__block {
+                    width: 85px;
+                    height: 85px;
+                }
+            }
+
         }
 
     }

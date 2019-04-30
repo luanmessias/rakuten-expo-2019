@@ -2,7 +2,11 @@
 
     <div class="mobMenu">
         <img class="logo_menu" src="assets/img/logo_menu.png" alt="" />
-        <div class="mobMenu__bt"></div>
+        <div class="mobBt">
+            <span class="mobBt__top"></span>
+            <span class="mobBt__mid"></span>
+            <span class="mobBt__bot"></span>
+        </div>
     </div>
 
     <div class="wrapper wrapper--menu">
@@ -16,7 +20,7 @@
             <a href="#section-2" class="menu__item goTo">AGENDA</a>
             <a href="#section-3" class="menu__item goTo">PALESTRANTES</a>
             <a href="#section-4" class="menu__item goTo">PATROCINADORES</a>
-            <a href="#section-5" class="menu__item goTo menu__item--alt">INGRESSOS</a>
+            <a href="#section-5" class="menu__item goTo menu__item--alt">TICKETS</a>
         </nav>
 
     </div>

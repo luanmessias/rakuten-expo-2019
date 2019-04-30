@@ -72,13 +72,21 @@ $('.goTo').click(function (e) {
    $(this).addClass('active');
 
    if (target.length) {
-      var scrollTo = target.offset().top - 76;
+
+      if(windowWidth <= breakPoint){
+         var scrollTo = target.offset().top - 60;
+      } else {
+         var scrollTo = target.offset().top - 100;
+      }
+
       $('body, html').animate({ scrollTop: scrollTo + 'px' }, 800);
    }
 });
 
 
-$('.mobMenu__bt').click(function () {
+$('.mobBt, .menu__item').click(function () {
+   $('.mobMenu').toggleClass('active');
+   $(this).toggleClass('active');
    $('.menu').toggle2classes('active', 'inactive');
 });
 
@@ -106,7 +114,7 @@ $(window).resize(function () {
 //Scroll functions
 $(window).scroll(function () {
    var sc = $(window).scrollTop();
-   if (sc > 50) {
+   if (sc > 768) {
       $("header > .wrapper").addClass("active");
       $(".logo_menu").addClass("hide");
       $(".logo_menu_red").removeClass("hide");
@@ -125,12 +133,15 @@ $(document).ready(function () {
    //Banner Home Function
    $('.topSlider').owlCarousel({
       animateOut: 'fadeOut',
-      animateIn: 'fadeIn',
       items: 1,
       smartSpeed: 450,
+      rewind: true,
       mouseDrag: false,
       touchDrag: false,
       dots: true,
-      autoHeight:true
+      autoHeight:true,
+      autoplay:true,
+      autoplayHoverPause:true,
+      autoplayTimeout: 5000
    });
 });
