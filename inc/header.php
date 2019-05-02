@@ -2,6 +2,7 @@
 
     <div class="mobMenu">
         <img class="logo_menu" src="assets/img/logo_menu.png" alt="" />
+        <img class="logo_menu_red" src="assets/img/logo_menu_red.png" alt="" />
         <div class="mobBt">
             <span class="mobBt__top"></span>
             <span class="mobBt__mid"></span>

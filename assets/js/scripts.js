@@ -86,7 +86,7 @@ $('.goTo').click(function (e) {
 
 $('.mobBt, .menu__item').click(function () {
    $('.mobMenu').toggleClass('active');
-   $(this).toggleClass('active');
+   $('.mobBt').toggleClass('active');
    $('.menu').toggle2classes('active', 'inactive');
 });
 
@@ -101,6 +101,7 @@ $('.one').on('click', function () {
 
 //On resize functions
 $(window).resize(function () {
+   
    if ($(window).innerWidth() <= breakPoint) {
       $('.nrk_header .wrapper > .nrk_header__user').appendTo($(".navmob__welcome"));
    }
@@ -109,16 +110,19 @@ $(window).resize(function () {
       $('.menu').removeClass('active');
       $('.menu').removeClass('inactive');
    }
+
 });
 
 //Scroll functions
 $(window).scroll(function () {
    var sc = $(window).scrollTop();
-   if (sc > 768) {
+   if (sc >= 60) {
+      $(".mobMenu").addClass("fixed");
       $("header > .wrapper").addClass("active");
       $(".logo_menu").addClass("hide");
       $(".logo_menu_red").removeClass("hide");
    } else {
+      $(".mobMenu").removeClass("fixed");
       $("header > .wrapper").removeClass("active");
       $(".logo_menu").removeClass("hide");
       $(".logo_menu_red").addClass("hide");
@@ -128,6 +132,7 @@ $(window).scroll(function () {
 
 
 $(document).ready(function () {
+   AOS.init();
    initializeClock();
 
    //Banner Home Function

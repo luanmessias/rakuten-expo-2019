@@ -23,7 +23,6 @@ header{
 
         }
 
-
     }
 
 }
@@ -31,15 +30,24 @@ header{
 .mobMenu{
     @include flexbox(row, nowrap, space-between, center, center);
     @include box-sizing;
+    @include transition;
     width: 100%;
     height: 60px;
     padding: 0px 15px;
-    background-color:hsla(235, 73%, 6%, 0.9);
     position: fixed;
     z-index: 10;
 
+    .logo_menu,
+    .logo_menu_red{
+        max-width: 150px;
+    }
+
     .logo_menu{
         @include transition;
+    }
+    
+    .logo_menu_red{
+        display: none;
     }
 
     .buy{
@@ -55,6 +63,7 @@ header{
 
     .mobBt{
         @include flexbox(column, nowrap, space-between, flex-start, flex-start);
+        @include transition;
         width: 20px;
         height: 16px;
         overflow: hidden;
@@ -102,8 +111,36 @@ header{
     }
 
     &.active{
+        
         .logo_menu{
             @include opacity(0);
+        }
+    }
+
+    &.fixed{
+        @include box-shadow(5px, -5px, 8px, #6e6e6e);
+        background-color: #FFF;
+        .logo_menu{
+            display: none;
+        }
+        .logo_menu_red{
+            display: block;
+        }
+        .mobBt{
+            span{
+                background-color: rgb(41, 41, 41);
+            }
+        }
+        &.active{
+            background-color:hsla(235, 73%, 6%, 0.9);
+            .logo_menu_red{
+                @include opacity(0);
+            }
+            .mobBt{
+                span{
+                    background-color: #FFF;
+                }
+            }
         }
     }
 
@@ -196,18 +233,14 @@ header{
             padding: 15px;
             font-size: 20px;
 
-            &:hover{
-                background-color: #000;
-            }
             
             &.active{
-                background-color: #000;
                 &:before{
                     display: none;
                 }
             }
 
-            &:not(.menu__item--alt):after{
+            &:not(.menu__item--alt):not(:first-of-type):after{
                 content: "";
                 @include opacity(.5);
                 margin-top: 10px;

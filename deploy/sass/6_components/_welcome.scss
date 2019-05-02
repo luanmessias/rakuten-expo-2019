@@ -1,0 +1,104 @@
+.welcome {
+    @include box-sizing;
+    overflow: hidden;
+    
+    .wrapper {
+        @include flexbox(row, wrap, space-between, inherit, flex-start);
+    }
+
+    @include e('col') {
+        @include flexbox(column, nowrap, space-between, flex-start, flex-start);
+        @include box-sizing;
+        width: calc(50% - 30px);
+    }
+
+    @include e('title') {
+        @include fonte($second-font, 800, 48px, #000);
+        margin: 30px 0px;
+
+        &:after {
+            content: "";
+            width: 54px;
+            height: 7px;
+            display: block;
+            background-color: #000;
+        }
+    }
+
+    @include e('txt') {
+        @include fonte($second-font, 400, 18px, #5a5a5a);
+        display: block;
+    }
+
+    @include e('img') {
+        width: 100%;
+        display: block;
+        height: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    @include e('slogan') {
+        margin: 30px 0px;
+    }
+
+    @include e('tip') {
+        @include flexbox(row, nowrap, space-between, center, center);
+        margin-bottom: 25px;
+
+        img {
+            margin-right: 10px;
+        }
+
+        strong {
+            @include fonte($second-font, 800, 26px, #000);
+            margin: 10px 0px;
+            display: block;
+        }
+
+        >div>strong {
+            margin-bottom: 0px;
+        }
+    }
+
+
+    @include res-max(850px) {
+
+    }
+
+    @include res-max(350px) {
+        @include e('col') {
+            width: 100%;
+        }
+    }
+
+    @include res-between(351px, 450px) {
+       
+    }
+
+    @include res-between(451px, 550px) {
+       
+    }
+
+    @include res-between(551px, 650px) {
+       
+    }
+
+    @include res-between(651px, 750px) {
+       
+    }
+
+    @include res-between(751px, 850px) {
+      
+    }
+
+    @include res-between(851px, 1000px) {
+      
+
+    }
+
+    @include res-min(1001px) {
+       
+    }
+
+}

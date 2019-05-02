@@ -5,8 +5,8 @@
 
     <body>
         <?php include 'inc/header.php' ?>
+        <?php include 'inc/welcome.php' ?>
 
-        <div class="sections" id="section-1"></div>
         <div class="sections" id="section-2"></div>
         <div class="sections" id="section-3"></div>
         <div class="sections" id="section-4"></div>
