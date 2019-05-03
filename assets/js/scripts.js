@@ -1,5 +1,19 @@
 var breakPoint = 850;
 var windowWidth = $(window).innerWidth();
+var windowHeight = $(window).innerHeight();
+ 
+function isScrolledIntoView(elem) {
+   var $elem = $(elem);
+   var $window = $(window);
+
+   var docViewTop = $window.scrollTop();
+   var docViewBottom = docViewTop + $window.height();
+
+   var elemTop = $elem.offset().top;
+   var elemBottom = elemTop + $elem.height();
+
+   return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+}
 
 function initializeClock() {
    // Set the date we're counting down to
@@ -46,7 +60,6 @@ function initializeClock() {
       }
    }, 1000);
 }
-
 
 
 $.fn.toggle2classes = function (class1, class2) {
@@ -115,8 +128,8 @@ $(window).resize(function () {
 
 //Scroll functions
 $(window).scroll(function () {
-   var sc = $(window).scrollTop();
-   if (sc >= 60) {
+   var scTop = $(window).scrollTop();
+   if (scTop >= 60) {
       $(".mobMenu").addClass("fixed");
       $("header > .wrapper").addClass("active");
       $(".logo_menu").addClass("hide");
@@ -127,8 +140,25 @@ $(window).scroll(function () {
       $(".logo_menu").removeClass("hide");
       $(".logo_menu_red").addClass("hide");
    }
-});
+   
+   
+   if(isScrolledIntoView($('.numbers')) &&  !$('.numbers').hasClass('active')) {
+      $('.numbers').addClass('active');
+      $('.numbers__num span').each(function () {
+         $(this).prop('Counter', 0).animate({
+            Counter: $(this).text()
+         }, {
+               duration: 5000,
+               easing: 'swing',
+               step: function (now) {
+                  $(this).text(Math.ceil(now));
+               }
+            });
+      });
 
+   }
+
+});
 
 
 $(document).ready(function () {
@@ -149,4 +179,71 @@ $(document).ready(function () {
       autoplayHoverPause:true,
       autoplayTimeout: 5000
    });
+
+
+
+   $('.boxslider__box.one').owlCarousel({
+      animateOut: 'fadeOut',
+      animateIn: 'fadeIn',
+      items: 1,
+      smartSpeed: 600,
+      rewind: true,
+      mouseDrag: false,
+      touchDrag: false,
+      dots: false,
+      autoHeight:true,
+      autoplay:true,
+      autoplayTimeout: 7000, 
+   });
+   
+   $('.boxslider__box.four').owlCarousel({
+      animateOut: 'fadeOut',
+      animateIn: 'fadeIn',
+      items: 1,
+      smartSpeed: 600,
+      rewind: true,
+      mouseDrag: false,
+      touchDrag: false,
+      dots: false,
+      autoHeight:true,
+      autoplay:true,
+      autoplayTimeout: 7500, 
+   });
+
+   $('.boxslider__box.two').owlCarousel({
+      animateOut: 'fadeOut',
+      animateIn: 'fadeIn',
+      items: 1,
+      smartSpeed: 600,
+      rewind: true,
+      mouseDrag: false,
+      touchDrag: false,
+      dots: false,
+      autoHeight:true,
+      autoplay:true,
+      autoplayTimeout: 8000, 
+   });
+
+   $('.boxslider__box.three').owlCarousel({
+      animateOut: 'fadeOut',
+      animateIn: 'fadeIn',
+      items: 1,
+      smartSpeed: 600,
+      rewind: true,
+      mouseDrag: false,
+      touchDrag: false,
+      dots: false,
+      autoHeight:true,
+      autoplay:true,
+      autoplayTimeout: 8500, 
+   }); 
+
 });
+
+
+
+
+
+
+
+

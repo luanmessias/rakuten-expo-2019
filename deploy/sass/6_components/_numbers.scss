@@ -1,0 +1,88 @@
+.numbers{
+    @include flexbox(row, nowrap, center, center, center);
+    @include bgimage('bgnumbers.jpg');
+    @include box-sizing;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100%;
+    height: auto;
+    min-height: 230px;
+    padding: 35px 0px;
+
+    .wrapper{
+        @include flexbox(row, nowrap, space-between, center, center);
+        > div {
+            @include opacity(0);
+        }
+    }
+
+    @include e('content'){
+        @include flexbox(row, nowrap, space-between, center, center);
+        overflow: hidden;
+        width: 80%;
+    }
+
+    @include e('2018'){
+        span,
+        strong{
+            @include fonte($second-font, 400, 18px, #FFF);
+            display: block;
+            width: 100%;
+        }
+        strong{
+            display: block;
+            font-size: 66px;
+            font-weight: 800;
+            width: 100%;
+            line-height: 45px;
+        }
+    }
+
+    @include e('num'){
+        @include fonte($second-font, 800, 66px, #FFF);
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+
+    @include e('desc'){
+        @include fonte($second-font, 400, 18px, #FFF);
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+
+    @include e('participants'){
+        min-width: 200px;
+    }
+     
+    
+    &.active{
+        .wrapper{
+            > div {
+                @include opacity(1);
+            }
+        }
+
+        .numbers__2018{
+            @include animate(fadeInLeft, 0s);
+        }
+        .numbers__sep{
+            @include animate(fadeInLeft, .5s);
+        }
+        .numbers__speakers{
+            @include animate(fadeInLeft, 1s);
+        }
+        .numbers__sponsors{
+            @include animate(fadeInLeft, 1.5s);
+        }
+        .numbers__supporters{
+            @include animate(fadeInLeft, 2s);
+        }
+        .numbers__participants{
+            @include animate(fadeInLeft, 2.5s);
+        }
+    }
+
+}

@@ -9,6 +9,7 @@ header{
         border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 
         &.active{
+            z-index: 9999;
             @include res-min(850px){
                 @include box-shadow(5px, -5px, 8px, #6e6e6e);
                 @include transition;
@@ -111,7 +112,7 @@ header{
     }
 
     &.active{
-        
+        background-color:hsla(235, 73%, 6%, 0.9);
         .logo_menu{
             @include opacity(0);
         }
@@ -158,6 +159,12 @@ header{
         @include e('item'){
             height: 100px;
         }
+
+        .logo_menu,
+        .logo_menu_red{
+                max-width: 210px;
+                width: 100%;
+        }
     }
 
     @media #{$break-down} {
@@ -194,6 +201,11 @@ header{
    }
 
    @include res-max(850px) {
+       .logo_menu,
+       .logo_menu_red{
+            max-width: 210px;
+            width: 100%;
+       }
        .logo_menu {
            display: block !important;
        }

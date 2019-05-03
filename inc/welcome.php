@@ -6,7 +6,36 @@
                 nunc. In hac habitasse platea dictumst. Fusce tempor mauris urna, in molestie libero facilisis vitae.
                 Mauris vitae elementum mauris. Vestibulum neque eros, pellentesque a pulvinar eget, venenatis sit amet
                 ligula. Sed condimentum dignissim velit.eleifend. </span>
-            <img class="welcome__img" src="assets/img/welcome/1.png" alt="">
+            <div class="boxslider">
+                <div class="boxslider__col col_l">
+                    <div class="boxslider__box owl-carousel owl-theme one">
+                        <div style="background-image:url(assets/img/welcome/slider/1_1.jpg)"></div>
+                        <div style="background-image:url(assets/img/welcome/slider/2_1.jpg)"></div>
+                        <div style="background-image:url(assets/img/welcome/slider/3_1.jpg)"></div>
+                        <div style="background-image:url(assets/img/welcome/slider/4_1.jpg)"></div>
+                    </div>
+                    <div class="boxslider__box owl-carousel owl-theme two">
+                        <div style="background-image:url(assets/img/welcome/slider/2_3.jpg)"></div>
+                        <div style="background-image:url(assets/img/welcome/slider/3_3.jpg)"></div>
+                        <div style="background-image:url(assets/img/welcome/slider/4_3.jpg)"></div>
+                        <div style="background-image:url(assets/img/welcome/slider/1_3.jpg)"></div>
+                    </div>
+                    <div class="boxslider__box owl-carousel owl-theme three">
+                        <div style="background-image:url(assets/img/welcome/slider/3_4.jpg)"></div>
+                        <div style="background-image:url(assets/img/welcome/slider/4_4.jpg)"></div>
+                        <div style="background-image:url(assets/img/welcome/slider/1_4.jpg)"></div>
+                        <div style="background-image:url(assets/img/welcome/slider/2_4.jpg)"></div>
+                    </div>
+                </div>
+                <div class="boxslider__col col_r">
+                    <div class="boxslider__box owl-carousel owl-theme four">
+                        <div style="background-image:url(assets/img/welcome/slider/4_2.jpg)"></div>
+                        <div style="background-image:url(assets/img/welcome/slider/1_2.jpg)"></div>
+                        <div style="background-image:url(assets/img/welcome/slider/2_2.jpg)"></div>
+                        <div style="background-image:url(assets/img/welcome/slider/3_2.jpg)"></div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="welcome__col" data-aos="fade-left" data-aos-easing="ease-in-sine">
 
