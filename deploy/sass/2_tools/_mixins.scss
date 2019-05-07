@@ -155,6 +155,23 @@ $color) {
   align-content: $fb-align-content;
 }
 
+@mixin fb-direction($fb-direction:row) {
+  //flex-direction: row | row-reverse | column | column-reverse;
+  -webkit-flex-direction: $fb-direction;
+  -moz-flex-direction: $fb-direction;
+  -ms-flex-direction: $fb-direction;
+  -o-flex-direction: $fb-direction;
+  flex-direction: $fb-direction;
+}
+
+@mixin fb-wrap($fb-wrap:wrap) {
+  //flex-wrap: nowrap | wrap | wrap-reverse;
+  -webkit-flex-wrap: $fb-wrap;
+  -moz-flex-wrap: $fb-wrap;
+  -ms-flex-wrap: $fb-wrap;
+  -o-flex-wrap: $fb-wrap;
+}
+
 @mixin order($order) {
   -webkit-order: $order;
   -moz-order: $order;
@@ -164,7 +181,7 @@ $color) {
 }
 
 @mixin filter($filter-type,
-$filter-amount) {
+  $filter-amount) {
   -webkit-filter: $filter-type+unquote('(#{$filter-amount})');
   -moz-filter: $filter-type+unquote('(#{$filter-amount})');
   -ms-filter: $filter-type+unquote('(#{$filter-amount})');

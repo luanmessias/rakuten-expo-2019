@@ -121,6 +121,7 @@ header{
     &.fixed{
         @include box-shadow(5px, -5px, 8px, #6e6e6e);
         background-color: #FFF;
+        z-index: 99999;
         .logo_menu{
             display: none;
         }
@@ -187,6 +188,7 @@ header{
         &.inactive{
             @include animate(fadeOutUp, 0s);
             visibility: visible;
+
         }
 
     }
@@ -287,7 +289,6 @@ header{
     }
 
 }
-
 
 
 

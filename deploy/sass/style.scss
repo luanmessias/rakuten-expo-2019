@@ -28,9 +28,11 @@
 @import '5_objects/owlCarousel';
 @import '5_objects/timer';
 @import '5_objects/aos';
+@import '5_objects/modal';
 
 //COMPONENTS - All specifc stye for objects goes here.
 //======================================
+@import '6_components/preloader';
 @import '6_components/header';
 @import '6_components/topSlider';
 @import '6_components/topSliders/first';
@@ -38,3 +40,5 @@
 @import '6_components/topSliders/show';
 @import '6_components/welcome';
 @import '6_components/numbers';
+@import '6_components/keynotes';
+@import '6_components/speakers';

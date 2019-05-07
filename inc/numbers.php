@@ -1,4 +1,4 @@
-<section class="numbers" id="section-2" data-aos="fade-top" data-aos-easing="ease-in-sine">
+<section class="numbers" data-aos="fade-top" data-aos-easing="ease-in-sine">
     <div class="wrapper">
         <div class="numbers__2018">
             <span>COMO FOI EM</span>

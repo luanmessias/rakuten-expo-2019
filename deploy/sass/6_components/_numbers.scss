@@ -11,14 +11,14 @@
     padding: 35px 0px;
 
     .wrapper{
-        @include flexbox(row, nowrap, space-between, center, center);
+        @include flexbox(row, wrap, space-between, center, center);
         > div {
             @include opacity(0);
         }
     }
 
     @include e('content'){
-        @include flexbox(row, nowrap, space-between, center, center);
+        @include flexbox(row, wrap, space-between, center, center);
         overflow: hidden;
         width: 80%;
     }
@@ -83,6 +83,168 @@
         .numbers__participants{
             @include animate(fadeInLeft, 2.5s);
         }
+    }
+
+    @include res-max(350px) {
+        .wrapper{
+            div{
+                width: 100%;
+            }
+        }
+        @include e('2018'){
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        @include e('sep'){
+            display: none;
+        }
+    }
+
+    @include res-between(351px, 450px) {
+        .wrapper{
+            div{
+                width: 100%;
+            }
+        }
+        @include e('2018'){
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        @include e('sep'){
+            display: none;
+        }
+    }
+
+    @include res-between(451px, 550px) {
+
+        .numbers__content{
+            width: 100%;
+            margin: 10px 0px;
+        }
+
+        @include e('2018'){
+            text-align: center;
+            margin-bottom: 15px;
+            width: 100%;
+        }
+
+        @include e('sep'){
+            display: none;
+        }
+
+        @include e('participants'){
+            margin-top: 20px;
+            width: 100%;
+        }
+    }
+
+    @include res-between(551px, 650px) {
+        .numbers__content{
+            width: 100%;
+            margin: 10px 0px;
+        }
+
+        @include e('2018'){
+            text-align: center;
+            margin-bottom: 15px;
+            width: 100%;
+        }
+
+        @include e('sep'){
+            display: none;
+        }
+
+        @include e('participants'){
+            margin-top: 20px;
+            width: 100%;
+        }
+    }
+
+    @include res-between(651px, 750px) {
+
+        .numbers__content{
+            width: 100%;
+            margin: 10px 0px;
+        }
+
+        div {
+            .numbers__num{
+                font-size: 55px;
+            }
+            .numbers__desc{
+                font-size: 15px;
+            }
+        }
+
+        @include e('2018'){
+            text-align: center;
+            margin-bottom: 15px;
+            width: 100%;
+        }
+
+        @include e('sep'){
+            display: none;
+        }
+       
+    }
+
+    @include res-between(751px, 850px) {
+
+        .numbers__content{
+            width: 100%;
+            margin: 10px 0px;
+        }
+
+        div {
+            .numbers__num{
+                font-size: 55px;
+            }
+            .numbers__desc{
+                font-size: 15px;
+            }
+        }
+
+        @include e('2018'){
+            text-align: center;
+            margin-bottom: 15px;
+            width: 100%;
+        }
+
+        @include e('sep'){
+            display: none;
+        }
+    }
+
+    @include res-between(751px, 850px) {
+        .numbers__content{
+            width: 100%;
+            margin: 10px 0px;
+        }
+
+        div {
+            .numbers__num{
+                font-size: 65px;
+            }
+            .numbers__desc{
+                font-size: 18px;
+            }
+        }
+
+        @include e('2018'){
+            text-align: center;
+            margin-bottom: 15px;
+            width: 100%;
+        }
+
+        @include e('sep'){
+            display: none;
+        }
+    }
+
+    @include res-between(951px, 1000px) {
+        
     }
 
 }

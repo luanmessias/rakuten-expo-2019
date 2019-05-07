@@ -13,12 +13,10 @@
 
 
         .line {
-
+            width: 100%;
             @media #{$wrap-up} {
                 @include flexbox(row, wrap, space-between, flex-start, flex-start);
             }
-
-
             .sep {
                 margin: 0px 15px;
             }
