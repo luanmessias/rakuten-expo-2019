@@ -2,6 +2,7 @@
     width: 100%;
     height: 100%;
     background-color: #141228;
+    overflow: hidden;
 
     .owl-carousel,
     .owl-stage-outer,
@@ -41,7 +42,11 @@
 
     &.owl-theme .owl-nav+.owl-dots {
         @include flexbox(column, nowrap, center, center, center);
-        @include animate(fadeIn, 2s);
+        @include animate(fadeInRight, 0s);
+
+        &.inactive{
+            @include animate(fadeOutRight, 0s);
+        }
 
         position: absolute;
         right: 0;
@@ -71,6 +76,8 @@
                 }
             }
         }
+
+
 
     }
 
