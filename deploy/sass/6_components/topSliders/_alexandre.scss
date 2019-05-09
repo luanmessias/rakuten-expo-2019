@@ -1,10 +1,8 @@
 .topSlider {
-    .keynote {
+    .alexandre {
 
-        @include m('fogaca') {
-            &:before {
-                @include bgimage('bgtop_fogaca.jpg');
-            }
+        &:before {
+            @include bgimage('bgtop_alexandre.jpg');
         }
 
         .wrapper {
@@ -36,8 +34,9 @@
         @include e('photo') {
             @include transition;
             position: absolute;
-            bottom: -370px;
+            bottom: 0px;
             right: 0;
+            max-width: 535px;
         }
 
         @include e('slogan') {
@@ -64,8 +63,8 @@
 
         @include res-max(350px) {
             @include e('about') {
-                font-size: 24px;
-                max-width: 200px;
+                font-size: 20px;
+                max-width: inherit;
                 img{
                     max-width: 20px;
                 }
@@ -77,7 +76,7 @@
             }
             @include e('photo') {
                 max-width: 310px;
-                top: 0px;
+                bottom: 0px;
                 right: -50px;
             }
             @include e('timer'){
@@ -100,8 +99,8 @@
 
         @include res-between(351px, 450px) {
             @include e('about') {
-                font-size: 24px;
-                max-width: 200px;
+                font-size: 20px;
+                max-width: inherit;
                 img{
                     max-width: 20px;
                 }
@@ -112,8 +111,8 @@
                 margin-top: 0px;
             }
             @include e('photo') {
-                max-width: 370px;
-                top: 0px;
+                max-width: 325px;
+                bottom: 0px;
                 right: -50px;
             }
             @include e('timer'){
@@ -136,29 +135,36 @@
 
         @include res-between(451px, 550px) {
             @include e('about') {
-                font-size: 30px;
+                font-size: 24px;
                 max-width: 250px;
                 img{
-                    max-width: 30px;
+                    max-width: 20px;
                 }
             }
             @include e('name') {
-                font-size: 52px;
-                line-height: 50px;
+                font-size: 35px;
+                line-height: 31px;
                 margin-top: 0px;
             }
             @include e('photo') {
-                max-width: 370px;
-                top: 0px;
-                right: -50px;
+                max-width: 385px;
+                bottom: 0px;
+                right: -45px;
             }
             @include e('timer'){
+                @include transition;
                 position: absolute;
-                bottom: 10px;
+                bottom: 0px;
                 z-index: 1;
+                .timer{
+                    @include flexbox(column, wrap, flex-start, flex-start, flex-start);
+                }
                 .timer__block {
-                    width: 85px;
-                    height: 85px;
+                    width: 80px;
+                    height: 80px;
+                    @include m('hour'){
+                        margin: 10px 0px;
+                    }
                 }
             }
         }
@@ -172,8 +178,8 @@
                 }
             }
             @include e('name') {
-                font-size: 65px;
-                line-height: 60px;
+                font-size: 45px;
+                line-height: 42px;
                 margin-top: 0px;
             }
             @include e('photo') {
@@ -234,7 +240,7 @@
                 margin-top: 0px;
             }
             @include e('photo') {
-                max-width: 550px;
+                max-width: 470px;
                 top: 0px;
                 right: -50px;
             }
@@ -263,7 +269,7 @@
                 margin-top: 0px;
             }
             @include e('photo') {
-                max-width: 450px;
+                max-width: 425px;
                 top: 0px;
                 right: 40px;
             }

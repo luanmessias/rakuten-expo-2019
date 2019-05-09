@@ -63,11 +63,11 @@
 
     </div>
 
-    <div class="topSlider__item keynote keynote--fogaca">
+    <div class="topSlider__item fogaca">
         <div class="wrapper">
-            <div class="keynote__about"><img src="assets/img/aspas.png" alt="">PALESTRANTE CONFIRMADO</div>    
-            <div class="keynote__name">CHEF <br> HENRIQUE <br> FOGAÇA</div>
-            <div class="keynote__timer">
+            <div class="fogaca__about"><img src="assets/img/aspas.png" alt="">KEYNOTE SPEAKER</div>    
+            <div class="fogaca__name">CHEF <br> HENRIQUE <br> FOGAÇA</div>
+            <div class="fogaca__timer">
                 <div id="timer" class="timer">
                     <div class="timer__block timer__block--day">
                         <span id="days_fogaca" class="timer__day"></span>
@@ -83,8 +83,33 @@
                     </div>
                 </div>
             </div>
-            <img class="keynote__photo" src="assets/img/fogaca.png" alt="Chef Henrique Fogaça">
-            <img class="keynote__slogan" src="assets/img/keynote.png" alt="keynote Slogan">
+            <img class="fogaca__photo" src="assets/img/fogaca.png" alt="Chef Henrique Fogaça">
+            <img class="fogaca__slogan" src="assets/img/keynote.png" alt="keynote Slogan">
+        </div>
+    </div>
+
+    <div class="topSlider__item alexandre">
+        <div class="wrapper">
+            <div class="alexandre__about"><img src="assets/img/aspas.png" alt="">KEYNOTE SPEAKER</div>    
+            <div class="alexandre__name">ALEXANDRE <br> GARCIA</div>
+            <div class="alexandre__timer">
+                <div id="timer" class="timer">
+                    <div class="timer__block timer__block--day">
+                        <span id="days_alexandre" class="timer__day"></span>
+                        <span>DIAS</span>
+                    </div>
+                    <div class="timer__block timer__block--hour">
+                        <span id="hours_alexandre" class="timer__hour"></span>
+                        <span>HORAS</span>
+                    </div>
+                    <div class="timer__block timer__block--min">
+                        <span id="minutes_alexandre" class="timer__min"></span>
+                        <span>MINUTOS</span>
+                    </div>
+                </div>
+            </div>
+            <img class="alexandre__photo" src="assets/img/alexandre.png" alt="Alexandre Garcia">
+            <img class="alexandre__slogan" src="assets/img/keynote.png" alt="keynote Slogan">
         </div>
     </div>
 

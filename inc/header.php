@@ -19,9 +19,9 @@
             </a>
             <a href="#section-1" class="menu__item goTo">SOBRE</a>
             <a href="#section-3" class="menu__item goTo">PALESTRANTES</a>
-            <a href="#section-2" class="menu__item goTo">AGENDA</a>
-            <a href="#section-4" class="menu__item goTo">PATROCINADORES</a>
-            <a href="#section-5" class="menu__item goTo menu__item--alt">TICKETS</a>
+            <a href="#section-4" class="menu__item goTo">AGENDA</a>
+            <a href="#section-6" class="menu__item goTo">PATROCINADORES</a>
+            <a href="#section-7" class="menu__item goTo menu__item--alt">TICKETS</a>
         </nav>
 
     </div>

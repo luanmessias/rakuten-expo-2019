@@ -16,7 +16,8 @@
         @include animate(fadeIn, 0s);
         z-index: 1;
         
-        .keynote,
+        .fogaca,
+        .alexandre,
         .show {
             @include e('about') {
                 @include animate(fadeInLeft, 0s);
@@ -42,7 +43,7 @@
 
     &.owl-theme .owl-nav+.owl-dots {
         @include flexbox(column, nowrap, center, center, center);
-        @include animate(fadeInRight, 0s);
+        @include animate(fadeInRight, 1.5s);
 
         &.inactive{
             @include animate(fadeOutRight, 0s);

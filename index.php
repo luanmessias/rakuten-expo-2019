@@ -4,17 +4,13 @@
     <?php include 'inc/head.php' ?>
 
     <body>
-        <?php include 'inc/preloader.php' ?>
+        <?php include 'inc/preloader.php'?>
         <?php include 'inc/header.php' ?>
         <?php include 'inc/welcome.php' ?>
         <?php include 'inc/numbers.php' ?>
         <?php include 'inc/keynotes.php' ?>
         <?php include 'inc/speakers.php' ?>
-
-        <div class="sections" id="section-4"></div>
-        <div class="sections" id="section-5"></div>
-
-
+        <?php include 'inc/schedule.php' ?>
         <?php include 'inc/footer.php' ?>
     </body>
 

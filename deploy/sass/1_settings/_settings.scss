@@ -62,6 +62,14 @@ $box_color                : hsla(204, 83%, 40%, 1);     // #1277bc
 $whatsapp_color           : hsla(142, 70%, 49%, 1);     // #1277bc
 
 
+//SETTINGS - SCHEDULE
+//=======================================================================
+$card_color_one: #ff9c00;
+$card_color_two: #02afde;
+$card_color_three: #dc070f;
+$card_color_four: #21ac65;
+
+
 //SETTINGS - MEDIAQUERIES
 //=======================================================================
 $res-300: "(max-width: 300px)";
@@ -80,3 +88,5 @@ $break-down: "(max-width: #{$res-break})";
 $break-up: "(min-width: #{$res-break + 1})";
 $wrap-down: "(min-width: #{$res-break + 1}) and (max-width: #{$res-wrapper})";
 $wrap-up: "(min-width: #{$res-wrapper + 1})";
+
+

@@ -2,7 +2,7 @@ var breakPoint = 850;
 var windowWidth = $(window).innerWidth();
 var windowHeight = $(window).innerHeight();
 
- 
+ //Functions
 function isScrolledIntoView(elem) {
    var $elem = $(elem);
    var $window = $(window);
@@ -43,6 +43,10 @@ function initializeClock() {
       document.getElementById("hours").innerHTML = hours;
       document.getElementById("minutes").innerHTML = minutes;
 
+      document.getElementById("days_alexandre").innerHTML = days;
+      document.getElementById("hours_alexandre").innerHTML = hours;
+      document.getElementById("minutes_alexandre").innerHTML = minutes;
+
       document.getElementById("days_fogaca").innerHTML = days;
       document.getElementById("hours_fogaca").innerHTML = hours;
       document.getElementById("minutes_fogaca").innerHTML = minutes;
@@ -62,7 +66,6 @@ function initializeClock() {
    }, 1000);
 }
 
-
 $.fn.toggle2classes = function (class1, class2) {
    if (!class1 || !class2)
       return this;
@@ -78,14 +81,7 @@ $.fn.toggle2classes = function (class1, class2) {
    });
 };
 
-$(window).on('load', function () {
-   $('.preloader img').fadeOut();
-   $('.preloader').delay(350).fadeOut('slow'); 
-   $('body').delay(350).css({'overflow': 'visible'});
-});
-
-
-
+//On Click functions
 $('.speaker__photo').click(function(){
    $('.modal-content').html('');
    $(this).parent().clone().appendTo(".modal-content");
@@ -95,9 +91,6 @@ $('.speaker__photo').click(function(){
 $('.close-modal').click(function(){
    $('.modal-overlay, .modal').toggleClass('active');
 });
-
-
-
 
 $('.goTo').click(function (e) {
    e.preventDefault();
@@ -118,7 +111,6 @@ $('.goTo').click(function (e) {
    }
 });
 
-
 $('.mobBt, .menu__item').click(function () {
    $('.mobMenu').toggleClass('active');
    $('.mobBt').toggleClass('active');
@@ -131,7 +123,6 @@ $('.one').on('click', function () {
       behavior: "smooth"
    });
 });
-
 
 //On resize functions
 $(window).resize(function () {
@@ -181,7 +172,7 @@ $(window).scroll(function () {
 
 });
 
-
+//Ready functions
 $(document).ready(function () {
    AOS.init();
    initializeClock();
@@ -196,7 +187,7 @@ $(document).ready(function () {
       touchDrag: false,
       dots: true,
       autoHeight:true,
-      autoplay:true,
+      autoplay:false,
       autoplayHoverPause:true,
       autoplayTimeout: 5000
    });
@@ -281,5 +272,12 @@ $(document).ready(function () {
       autoplayTimeout: 8500, 
    }); 
 
+});
+
+//On Load functions
+$(window).on('load', function () {
+   $('.preloader img').fadeOut();
+   $('.preloader').delay(350).fadeOut('slow'); 
+   $('body').delay(350).css({'overflow': 'visible'});
 });
 

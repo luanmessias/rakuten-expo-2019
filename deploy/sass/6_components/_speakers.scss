@@ -156,7 +156,6 @@
                 width: 100%;
                 height: auto;
             }
-            
         }
 
         @include e('info') {
@@ -256,6 +255,10 @@
 
             @include e('job'){
                 text-align: center;
+            }
+
+            @include e('social'){
+                margin: 15px auto;
             }
      
         }
